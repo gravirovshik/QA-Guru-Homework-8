@@ -37,6 +37,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
+                .setUserEmail(userEmail)
                 .setGender(gender)
                 .setUserNumber(userNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
@@ -81,6 +82,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
+                .setUserEmail(userEmail)
                 .setGender(gender)
                 .setUserNumber(userNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
@@ -126,6 +128,8 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .setGender(gender.getTitle())
                 .setUserNumber(userNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubject(subjectsOne)
@@ -136,7 +140,8 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setCity(city)
                 .clickSubmit();
 
-        registrationPage.checkResult("Student Name", firstName + " " + lastName)
+        registrationPage
+                .checkResult("Student Name", firstName + " " + lastName)
                 .checkResult("Student Email", userEmail)
                 .checkResult("Gender", gender.getTitle())
                 .checkResult("Mobile", userNumber)
